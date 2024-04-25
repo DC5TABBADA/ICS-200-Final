@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us</title>
+	<link rel="stylesheet" href="contact.css">
+  <link rel="js" href="FINAL.js">
+  
+	<script>
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else {
+				alert("Geolocation is not supported by this browser.");
+			}
+		}
+
+		function showPosition(position) {
+			var lat = position.coords.latitude;
+			var lon = position.coords.longitude;
+			document.getElementById("location").innerHTML = "Your location: " + lat + ", " + lon;
+		}
+	</script>
+  <header>
+    <link rel="stylesheet" href="test.css">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Pages</a>
+                <ul>
+                  <li><a href="page1.html">Page 1</a></li>
+                  <li><a href="page2.html">Page 2</a></li>
+                  <li><a href="page3.html">Page 3</a></li>
+                  <li><a href="page4.html">Page 4</a></li>
+                  <li><a href="page5.html">Page 5</a></li>
+                  <li><a href="page6.html">Page 6</a></li>
+
+                </ul>
+              </li>
+              
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+</head>
+<body>
+	<main>
+		<h1>Contact Us</h1>
+		<form action="#" method="post">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			<label for="car">Car Year, Make and Model:</label>
+			<input type="text" id="car" name="car" required>
+			<label for="modifications">Modifications:</label>
+			<textarea id="modifications" name="modifications"></textarea>
+			<label for="social-media">Social Media Handles:</label>
+			<input type="text" id="social-media" name="social-media">
+			<button type="button" onclick="getLocation()">Get My Location</button>
+			<div id="location"></div>
+			<button id="submitForm">Submit</button>
+      <script>
+        $("#submitForm").click(function() {
+           alert("The Form has been Submitted.");
+        });
+     </script>
+		</form>
+    
+	</main>
+</body>
+</html>
